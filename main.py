@@ -2,9 +2,16 @@ import tornado.httpserver
 import tornado.options
 import tornado.ioloop
 import tornado.web
+import os.path
 import config
 
-application = tornado.web.Application(config.handlerlist, debug = True)
+dev_settings = dict(
+    template_path=os.path.join(os.path.dirname(__file__), "templates"),
+    static_path=os.path.join(os.path.dirname(__file__), "static"),
+    debug = True
+)
+
+application = tornado.web.Application(config.handlerlist, **dev_settings)
 
 if __name__ == "__main__":
     tornado.options.parse_command_line()
