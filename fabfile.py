@@ -21,12 +21,10 @@ def edit_lighttpd_conf():
     local("sudo vim /etc/lighttpd/lighttpd.conf",capture = False)
     
 def start_redis():
-    local("cd ~/redis; ./redis-server redis.conf")
+    local("cd redis; ./redis-server redis.conf")
     
 def update_app():
-    local("cd /var/www; sudo git pull")
-    stop_apache2()
-    start_apache2()
+    local("cd /var/www; sudo git pull",capture = False)
    
 
 
