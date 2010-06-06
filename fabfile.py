@@ -5,13 +5,13 @@ Created on Jun 6, 2010
 '''
 from fabric.operations import local 
 
-def start_apache():
+def start_apache2():
     local("sudo apache2ctl start", capture = False)
     
-def stop_apache():
+def stop_apache2():
     local("sudo apache2ctl stop", capture = False)
     
-def edit_apache_conf():
+def edit_apache2_conf():
     local("sudo vim /etc/apache2/apache2.conf", capture = False)
     
 def start_lighttpd():
