@@ -21,11 +21,10 @@ def edit_lighttpd_conf():
     local("sudo vim /etc/lighttpd/lighttpd.conf",capture = False)
     
 def start_redis():
-    local("./~/redis/redis-server")
+    local("cd ~/redis; ./redis-server redis.conf")
     
-def rootfolder():
-    local("cd ~")
-    
+def update_app():
+    local("cd /var/www; sudo git pull")
    
 
 
@@ -65,6 +64,7 @@ def initial_setup():
     #install Redis
     local("git clone git://github.com/antirez/redis.git", capture = False)
     local("cd redis; make", capture = False)
+    local("cp -rf redis ~")
     
     #install Redis for Python
     local("git clone git://github.com/andymccurdy/redis-py.git", capture = False)
