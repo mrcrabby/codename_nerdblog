@@ -25,6 +25,8 @@ def start_redis():
     
 def update_app():
     local("cd /var/www; sudo git pull")
+    stop_apache2()
+    start_apache2()
    
 
 
