@@ -1,6 +1,8 @@
 import tornado.wsgi
 import wsgiref.handlers
+import os.path
 import sys
+
 sys.path.append('/var/www')
 import config
 
