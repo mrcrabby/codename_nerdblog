@@ -32,6 +32,8 @@ def rootfolder():
 def initial_setup():
     
     #Loading of Initial Tools
+    local("sudo aptitude update",capture = False)
+    local("sudo aptitude install build-essential", capture = False)
     local("sudo apt-get install vim", capture = False)
     local("sudo update-alternatives --config editor", capture = False)
     local("sudo apt-get install subversion", capture = False)
