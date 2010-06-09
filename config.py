@@ -1,3 +1,6 @@
-from handlers import base
+from handlers import base, admin
 
-handlerlist = [(r'/', base.BaseHandler)]
+handlerlist = [(r'/', base.BaseHandler),
+               (r'/admin', admin.RootHandler),
+               (r'/adminajax/createarticleform', admin.AjaxCreateFormHandler),
+               ]

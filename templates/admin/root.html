@@ -1,0 +1,18 @@
+{% extends "../base.html" %}
+{% block bodywrapper %}
+
+<div id="main">
+	<h1>Site Administration</h1>
+<div id="admin_container">
+    <h3><a href="#">Create New Article</a></h3>
+    <div>{% include "createarticle.html" %}</div>
+    <h3><a href="#">List Articles</a></h3>
+    <div>Second content</div>
+    <h3><a href="#">Manage Images</a></h3>
+    <div>Image Manager</div>
+</div>
+	<div id="admin_wrapper"></div>
+</div>
+
+
+{% end %}

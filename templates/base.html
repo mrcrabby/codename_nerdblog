@@ -4,14 +4,22 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Nerd Blog... coming soon</title>
 	</head>
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" media="screen" />
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	
+	{% if globals().has_key('extrajs') %}
+		{% for js in extrajs  %}
+		<script type="text/javascript" src="js/{{ js }}"></script>
+		{% end %}
+	{% end %}
 	<body>
-	<div id="main">
-		<img src="images/comingsoon.png" id="comingsoon" />
-		<br />{{ foo }}
-	</div>
+	{% block bodywrapper %}
+		<div id="main">
+			<img src="images/comingsoon.png" id="comingsoon" />
+			<br />
+		</div>
+	{% end %}
 	</body>
 </html>
