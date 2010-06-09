@@ -8,6 +8,7 @@ $(function () {
 	$("#admin_container").accordion();
 	$("input[name='article_publish']").datepicker();
 	$("#createbtn").button({icons: {primary: 'ui-icon-disk'}});
+	$("#previewbtn").button({icons: {primary: 'ui-icon-search'}});
 	$("#createactivate").buttonset();
 
 });
